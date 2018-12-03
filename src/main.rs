@@ -1,9 +1,14 @@
 extern crate clap;
+extern crate regex;
+
+#[macro_use]
+extern crate lazy_static;
 
 use clap::{App, Arg};
 
 mod day1;
 mod day2;
+mod day3;
 
 fn main() {
     let matches = App::new("Advent of Code 2018")
@@ -19,7 +24,8 @@ fn main() {
     match matches.value_of("day").unwrap().parse::<u8>().unwrap() {
         1 => day1::solve(),
         2 => day2::solve(),
-        3...25 => eprintln!("not yet solved!"),
+        3 => day3::solve(),
+        4...25 => eprintln!("not yet solved!"),
         _ => eprintln!("day must be between 1 and 25"),
     }
 }
