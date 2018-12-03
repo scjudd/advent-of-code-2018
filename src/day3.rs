@@ -28,7 +28,7 @@ fn part1(input: &Vec<Claim>) -> u32 {
             }
         }
     }
-    fabric.iter().filter(|(_, c)| *c > &1).map(|_| 1).sum()
+    fabric.into_iter().filter(|(_, c)| *c > 1).map(|_| 1).sum()
 }
 
 fn part2(input: &Vec<Claim>) -> u32 {
